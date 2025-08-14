@@ -482,20 +482,3 @@ class ImageGenerationService:
             
         except Exception as e:
             logger.warning(f"Cleanup error: {e}")
-
-# Usage examples for iterative refinement:
-"""
-# Your existing API usage stays exactly the same:
-image_service = ImageGenerationService()
-
-# Generate initial images
-char_img = image_service.generate_image("knight, armor, sword")
-bg_img = image_service.generate_image("castle courtyard")
-
-# Your existing combine_images method now automatically uses vision positioning if available
-final_img = image_service.combine_images(char_img, bg_img)
-
-# All your refinement methods work the same:
-char_img_v2 = image_service.refine_image(char_img, "knight, armor, heroic stance", strength=0.4)
-char_img_v3 = image_service.refine_character_for_scene(char_img_v2, bg_img, "knight, armor, castle lighting")
-"""
